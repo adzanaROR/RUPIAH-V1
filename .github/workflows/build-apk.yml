@@ -13,7 +13,12 @@ jobs:
 
       - name: Extract project
         run: unzip -q RUPIAH-Cloud-Build-Adzana.zip
-
+        
+      - name: Enable AndroidX
+        run: |
+         echo "android.useAndroidX=true" >> RUPIAH/gradle.properties
+         echo "android.enableJetifier=true" >> RUPIAH/gradle.properties
+    
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
